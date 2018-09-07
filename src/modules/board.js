@@ -201,7 +201,8 @@ class Board {
             for (let y = 0; y < this.height; y++) {
                 let vertex = [x, y]
                 if (this.get(vertex) === 0 || vertex in liberties) continue
-                if (!this.hasLiberties(vertex)) return false
+								       // DK - change
+								       // if (!this.hasLiberties(vertex)) return false
 
                 this.getChain(vertex).forEach(v => liberties[v] = true)
             }
@@ -227,8 +228,9 @@ class Board {
             if (move.get(n) === 0) continue
 
             for (let c of move.getChain(n)) {
-                move.set(c, 0)
-                move.captures[(-sign + 1) / 2]++
+		// DK - change
+                // move.set(c, 0)
+                // move.captures[(-sign + 1) / 2]++
             }
         }
 
@@ -238,8 +240,9 @@ class Board {
 
         if (deadNeighbors.length === 0 && !move.hasLiberties(vertex)) {
             for (let c of move.getChain(vertex)) {
-                move.set(c, 0)
-                move.captures[(sign + 1) / 2]++
+		// DK - change
+                // move.set(c, 0)
+                // move.captures[(sign + 1) / 2]++
             }
         }
 
