@@ -163,6 +163,10 @@ exports.load = function() {
         settings[overwriteKey] = []
     }
 
+    // DK & WG
+    settings['engines.list'] = [{'name' : 'UTSW_Bioinformatics', 'path' : '/Volumes/DaehwanKim_8TB/work/image_analysis/leela-zero/src/leelaz', 'args' : '--weights /Users/infphilo/work/image_analysis/leela-zero/leelaz-model.txt -p 1000 -g --noponder'}]
+
+
     return exports.save()
 }
 

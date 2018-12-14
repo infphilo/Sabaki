@@ -439,7 +439,7 @@ class App extends Component {
         this.detachEngines()
         this.clearConsole()
 
-        await this.waitForRender()
+	await this.waitForRender()
 
         let emptyTree = this.getEmptyGameTree()
 
@@ -453,6 +453,10 @@ class App extends Component {
 
         this.treeHash = this.generateTreeHash()
         this.fileHash = this.generateFileHash()
+
+	// DK - attach the UTSW_Bioinformatics engine
+	let engines = setting.get('engines.list')
+	this.attachEngines(null, engines[0])
 
         if (playSound) sound.playNewGame()
     }
